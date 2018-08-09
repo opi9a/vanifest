@@ -1,9 +1,7 @@
 # VANIFEST
 
-## Kitchen
-
-### Left cupboard upper
-#### Stores
+## Left cupboard upper
+### Stores
 - soy sauce
 - chutneys
 - onion
@@ -15,26 +13,26 @@
 - pasta / rice backup
 - tabasco or similar
 
-### Left cupboard lower
-#### Cooking
+## Left cupboard lower
+### Cooking
 - frying pan
 - larger pan
 - pan lid
 - pan handle
 - kettle
 
-#### Eating
+### Eating
 - plates
 - bowls
 - glasses
 - mugs
 - tupperware (limited)
 
-#### Misc
+### Misc
 - candles
 - shopping bags
 
-### Under sink
+## Under sink
 - tinfoil
 - kitchen roll
 - matches / lighter
@@ -45,7 +43,7 @@
 - sweeping brush
 - roll of bin bags
 
-### Utensils draw
+## Utensils draw
 - corkscrew
 - cutlery
 - wooden spoon
@@ -54,19 +52,45 @@
 - chopping board
 - toaster
 
-### Middle right
-#### electronics
+## Middle right
+### electronics
 - GPS
 - charger / adapters
 
-### Lower right
-#### Tea and coffee
+## Lower right
+### Tea and coffee
 - teabags
 - instant decaf
 - coffee tin / ground coffee
 - coffee pot or aeropress
 - herb / rooibos tea
 - strainer
+
+## Main cabin
+- sat nav
+- phone holder
+- loo roll
+- occasional bags
+- water bottles
+- water petrol tank
+- doormat
+
+## Under seat
+### Clothes
+- climbing trousers
+- climbing tops
+- t shirts
+- underwear
+
+## Boudoir
+### wash kit
+- ear plugs
+- eye mask
+- decongestent / antihistamine
+
+## Wardrobe
+- hose
+- carousel
 
 ## Snug
 ### Bedding
@@ -98,34 +122,13 @@
 - chairs
 - picnic mat
 
-
-## Travelling items
-- water bottles
-- water petrol tank
-
-## Other gear
+### Other gear
 - Anoculus
 - Running Vests
 - Running shoes
 - Walking boots
 - Waterproof
 
-## Personal
-
-### Clothes
-- climbing trousers
-- climbing tops
-- t shirts
-- underwear
-
 ### Other
-- wash kit
-- ear plugs
-- eye mask
-- decongestent / antihistamine
-
-## Permanent
 - chock
-- occasional bags
-- carousel
-- 
+
