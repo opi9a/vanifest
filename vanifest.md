@@ -2,7 +2,8 @@
 
 ## Kitchen
 
-### Left cupboard upper (stores)
+### Left cupboard upper
+#### Stores
 - soy sauce
 - chutneys
 - onion
@@ -15,21 +16,21 @@
 - tabasco or similar
 
 ### Left cupboard lower
-#### cooking
+#### Cooking
 - frying pan
 - larger pan
 - pan lid
 - pan handle
 - kettle
 
-#### eating
+#### Eating
 - plates
 - bowls
 - glasses
 - mugs
 - tupperware (limited)
 
-#### misc
+#### Misc
 - candles
 - shopping bags
 
@@ -75,7 +76,7 @@
 - pillow cases
 - extra blanket
 
-## Library
+### Library
 - bird book
 - climbing guides
 - any maps
