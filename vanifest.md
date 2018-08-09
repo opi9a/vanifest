@@ -8,6 +8,10 @@
 - pan lid
 
 ### Utensils
+- corkscrew
+- cutlery
+- wooden spoon
+- spatula
 
 ### Stores
 - soy sauce
@@ -30,11 +34,34 @@
 - herb / rooibos tea
 - strainer
 
+### Stores from home
+- cereal
+
 ## Bedding
+- sheet
+- (extra sheet)
+- duvet
+- pillows
 
 ## Library
+- bird book
+- climbing guides
+- any maps
+- literature
 
 ## Climbing
+- harness(es)
+- shoes
+- rack
+- climbing ropes
+- ab ropes
+- chalk bag
+- rucksack
+
+## Camping gear
+- chairs
+- picnic mat
+
 
 ## Other gear
 - Anoculus
