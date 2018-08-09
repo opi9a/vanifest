@@ -1,8 +1,14 @@
 # VANIFEST
 
 ## Kitchen
+
 ### Vessels
+- frying pan
+- larger pan
+- pan lid
+
 ### Utensils
+
 ### Stores
 - soy sauce
 - chutneys
