@@ -37,6 +37,7 @@
 - kitchen roll
 - matches / lighter
 - tea towels
+- microfibre cloth(s)
 - washing up liquid
 - scourer
 - wet wipes
@@ -53,9 +54,19 @@
 - toaster
 
 ## Middle right
-### electronics
+### Electronics
+- iPad
+- kindle
 - GPS
 - charger / adapters
+
+### Games
+- scrabble
+- cards
+
+### Maintenance
+- gaffer tape
+- toolkit / leatherman
 
 ## Lower right
 ### Tea and coffee
@@ -74,6 +85,7 @@
 - water bottles
 - water petrol tank
 - doormat
+- trayble
 
 ## Under seat
 ### Clothes
@@ -87,6 +99,7 @@
 - ear plugs
 - eye mask
 - decongestent / antihistamine
+- tooth harps
 
 ## Wardrobe
 - hose
@@ -115,6 +128,7 @@
 - ab ropes
 - chalk bag
 - rucksack
+- belay glasses
 - first aid kit
 - water bottles
 
@@ -122,13 +136,25 @@
 - chairs
 - picnic mat
 
-### Other gear
-- Anoculus
-- Running Vests
-- Running shoes
-- Walking boots
-- Waterproof
+### Footwear
+- running shoes
+- walking boots
+- crocs
+
+### General outdoor gear
+- anoculus
+- running vests
+- waterproof
+- down jacket
+- hats
+- boofs
+- gloves
+- headtorches
 
 ### Other
 - chock
 
+## Rear pockets
+- window cleaner and cloth
+- hose attachments
+- van docs;
