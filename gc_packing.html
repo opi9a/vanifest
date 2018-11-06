@@ -34,14 +34,14 @@
   
 
  <div class="card heading rounded-0">
-  <div class="card-body lev1 align-middle py-2">
-    <h3> gc packing
+  <div class="card-body lev0 align-middle py-2">
+    <h2> gc packing
       <span class='counter badge badge-secondary float-right'>
         36</span>
-      <h3>
+      <h2>
   </div>
  </div> 
- <div class="level_1">
+ <div class="level_0">
 
   
 
@@ -51,14 +51,14 @@
   
 
  <div class="card heading rounded-0">
-  <div class="card-body lev2 align-middle py-2">
-    <h4> cycling
+  <div class="card-body lev1 align-middle py-2">
+    <h3> cycling
       <span class='counter badge badge-secondary float-right'>
         20</span>
-      <h4>
+      <h3>
   </div>
  </div> 
- <div class="level_2">
+ <div class="level_1">
 
   
 
@@ -290,14 +290,14 @@
   
 
  <div class="card heading rounded-0">
-  <div class="card-body lev2 align-middle py-2">
-    <h4> basic
+  <div class="card-body lev1 align-middle py-2">
+    <h3> basic
       <span class='counter badge badge-secondary float-right'>
         3</span>
-      <h4>
+      <h3>
   </div>
  </div> 
- <div class="level_2">
+ <div class="level_1">
 
   
 
@@ -342,14 +342,14 @@
   
 
  <div class="card heading rounded-0">
-  <div class="card-body lev2 align-middle py-2">
-    <h4> electronics
+  <div class="card-body lev1 align-middle py-2">
+    <h3> electronics
       <span class='counter badge badge-secondary float-right'>
         5</span>
-      <h4>
+      <h3>
   </div>
  </div> 
- <div class="level_2">
+ <div class="level_1">
 
   
 
@@ -416,14 +416,14 @@
   
 
  <div class="card heading rounded-0">
-  <div class="card-body lev2 align-middle py-2">
-    <h4> misc
+  <div class="card-body lev1 align-middle py-2">
+    <h3> misc
       <span class='counter badge badge-secondary float-right'>
         3</span>
-      <h4>
+      <h3>
   </div>
  </div> 
- <div class="level_2">
+ <div class="level_1">
 
   
 
@@ -468,14 +468,14 @@
   
 
  <div class="card heading rounded-0">
-  <div class="card-body lev2 align-middle py-2">
-    <h4> docs
+  <div class="card-body lev1 align-middle py-2">
+    <h3> docs
       <span class='counter badge badge-secondary float-right'>
         5</span>
-      <h4>
+      <h3>
   </div>
  </div> 
- <div class="level_2">
+ <div class="level_1">
 
   
 
@@ -541,8 +541,6 @@
   
   </div>
   
-  </div>
-  
 </div>
 
 <script>
@@ -555,7 +553,6 @@
   if (checked == "NO") {
     $( this ).attr("data-ticked", "YES");
 
-    console.log('was off, now', checked)
     $( this ).attr("style", "color: LightGrey");
 
     counters.each(function(i) {
@@ -563,9 +560,8 @@
       counters[i].innerHTML = val0 - 1;
       if (val0 == 1) {
         outx = $( this );
-        console.log(outx);
-        outx.attr("style", "background:Green");
-        <!-- counters[i].attr("color", "Green"); -->
+        outx.removeClass("badge-secondary");
+        outx.addClass("badge-success");
       };
       });
 
@@ -574,13 +570,16 @@
   else if (checked == "YES") {
     $( this ).attr("data-ticked", "NO");
 
-    console.log('was on, now', checked);
-
     $( this ).attr("style", "color: Black");
 
     counters.each(function(i) {
       var val0 = Number(counters[i].innerHTML);
       counters[i].innerHTML = val0 + 1;
+      if (val0 == 0) {
+        outx = $( this );
+        outx.removeClass("badge-success");
+        outx.addClass("badge-secondary");
+      };
       });
 
     };
@@ -596,21 +595,25 @@
 
 <style>
 
+  <!-- .badge { -->
+  <!-- background-color: DarkGrey; -->
+  <!-- } -->
+
   .counter {
     color: White;
   }
 
-  .lev1 {
+  .lev0 {
   background-color: DarkBlue;
   color: White;
   }
 
-  .lev2 {
+  .lev1 {
   background-color: LightGrey;
   color: DarkBlue;
   }
 
-  .lev3 {
+  .lev2 {
   background-color: LightGoldenRodYellow;
   color: DarkBlue;
   }
