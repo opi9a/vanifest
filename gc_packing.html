@@ -36,7 +36,8 @@
  <div class="card heading">
   <div class="card-body lev1">
     <h2> gc packing
-      <span class='counter float-right'>36</span>
+      <span class='counter badge badge-secondary float-right'>
+        36</span>
       <h2>
   </div>
  </div> 
@@ -52,7 +53,8 @@
  <div class="card heading">
   <div class="card-body lev2">
     <h3> cycling
-      <span class='counter float-right'>20</span>
+      <span class='counter badge badge-secondary float-right'>
+        20</span>
       <h3>
   </div>
  </div> 
@@ -290,7 +292,8 @@
  <div class="card heading">
   <div class="card-body lev2">
     <h3> basic
-      <span class='counter float-right'>3</span>
+      <span class='counter badge badge-secondary float-right'>
+        3</span>
       <h3>
   </div>
  </div> 
@@ -341,7 +344,8 @@
  <div class="card heading">
   <div class="card-body lev2">
     <h3> electronics
-      <span class='counter float-right'>5</span>
+      <span class='counter badge badge-secondary float-right'>
+        5</span>
       <h3>
   </div>
  </div> 
@@ -414,7 +418,8 @@
  <div class="card heading">
   <div class="card-body lev2">
     <h3> misc
-      <span class='counter float-right'>3</span>
+      <span class='counter badge badge-secondary float-right'>
+        3</span>
       <h3>
   </div>
  </div> 
@@ -465,7 +470,8 @@
  <div class="card heading">
   <div class="card-body lev2">
     <h3> docs
-      <span class='counter float-right'>5</span>
+      <span class='counter badge badge-secondary float-right'>
+        5</span>
       <h3>
   </div>
  </div> 
@@ -555,6 +561,13 @@
     counters.each(function(i) {
       var val0 = Number(counters[i].innerHTML);
       counters[i].innerHTML = val0 - 1;
+      if (val0 == 1) {
+        alert('hey');
+        outx = $( this );
+        console.log(outx);
+        outx.attr("style", "background:Green");
+        <!-- counters[i].attr("color", "Green"); -->
+      };
       });
 
     }
@@ -584,8 +597,7 @@
 
 <style>
   .counter {
-    font-size: 20px;
-    color: Grey;
+    color: White;
   }
 
   .lev1 {
