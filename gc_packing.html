@@ -34,10 +34,10 @@
   
 
  <div class="card heading rounded-0">
-  <div class="card-body lev0 align-middle py-2">
+  <div class="card-body lev0 py-2">
     <h3> gc packing
       <span class='counter badge badge-secondary float-right'>
-        34</span>
+        35</span>
       <h3>
   </div>
  </div> 
@@ -51,7 +51,7 @@
   
 
  <div class="card heading rounded-0">
-  <div class="card-body lev1 align-middle py-2">
+  <div class="card-body lev1 py-2">
     <h4> cycling
       <span class='counter badge badge-secondary float-right'>
         19</span>
@@ -221,7 +221,7 @@
   
   <div class="card element rounded-0" data-ticked="NO">
   <div class="card-body py-2">
-        tyre levers (gav)
+        tyre levers [g]
   </div>
   </div>
 
@@ -279,7 +279,7 @@
   
 
  <div class="card heading rounded-0">
-  <div class="card-body lev1 align-middle py-2">
+  <div class="card-body lev1 py-2">
     <h4> basic
       <span class='counter badge badge-secondary float-right'>
         3</span>
@@ -331,10 +331,10 @@
   
 
  <div class="card heading rounded-0">
-  <div class="card-body lev1 align-middle py-2">
+  <div class="card-body lev1 py-2">
     <h4> electronics
       <span class='counter badge badge-secondary float-right'>
-        3</span>
+        4</span>
       <h4>
   </div>
  </div> 
@@ -378,12 +378,23 @@
   
 
   
+  <div class="card element rounded-0" data-ticked="NO">
+  <div class="card-body py-2">
+        kindle [m]
+  </div>
+  </div>
+
+  
+
+  
+
+  
   
   </div>
   
 
  <div class="card heading rounded-0">
-  <div class="card-body lev1 align-middle py-2">
+  <div class="card-body lev1 py-2">
     <h4> misc
       <span class='counter badge badge-secondary float-right'>
         4</span>
@@ -446,7 +457,7 @@
   
 
  <div class="card heading rounded-0">
-  <div class="card-body lev1 align-middle py-2">
+  <div class="card-body lev1 py-2">
     <h4> docs
       <span class='counter badge badge-secondary float-right'>
         5</span>
@@ -525,40 +536,41 @@
   $(document).ready(function(){
 
   $(".element").click(function(){
-  var checked = $( this ).attr("data-ticked");
-  var counters = $( this ).parents().prev().find('.counter');
 
-  if (checked == "NO") {
-    $( this ).attr("data-ticked", "YES");
+    var checked = $( this ).attr("data-ticked");
+    var counters = $( this ).parents().prev().find('.counter');
 
-    $( this ).attr("style", "color: LightGrey");
 
-    counters.each(function(i) {
-      var val0 = Number(counters[i].innerHTML);
-      counters[i].innerHTML = val0 - 1;
-      if (val0 == 1) {
-        outx = $( this );
-        outx.removeClass("badge-secondary");
-        outx.addClass("badge-success");
-      };
-      });
+    if (checked == "NO") {
 
-    }
+      $( this ).attr("data-ticked", "YES");
+      $( this ).attr("style", "color: LightGrey");
 
-  else if (checked == "YES") {
-    $( this ).attr("data-ticked", "NO");
+      counters.each(function(i) {
+        var val0 = Number(counters[i].innerHTML);
+        counters[i].innerHTML = val0 - 1;
+        if (val0 == 1) {
+          $( this ).removeClass("badge-secondary");
+          $( this ).addClass("badge-success");
+        };
+        });
 
-    $( this ).attr("style", "color: Black");
+      }
 
-    counters.each(function(i) {
-      var val0 = Number(counters[i].innerHTML);
-      counters[i].innerHTML = val0 + 1;
-      if (val0 == 0) {
-        outx = $( this );
-        outx.removeClass("badge-success");
-        outx.addClass("badge-secondary");
-      };
-      });
+
+    else if (checked == "YES") {
+
+      $( this ).attr("data-ticked", "NO");
+      $( this ).attr("style", "color: Black");
+
+      counters.each(function(i) {
+        var val0 = Number(counters[i].innerHTML);
+        counters[i].innerHTML = val0 + 1;
+        if (val0 == 0) {
+          $( this ).removeClass("badge-success");
+          $( this ).addClass("badge-secondary");
+        };
+        });
 
     };
   });
