@@ -3,8 +3,213 @@
 <html>
 <meta charset="utf-8"/>
 <head>
-<link href="pf.css" rel="stylesheet"/>
-</head>
+
+<style>* {
+  box-sizing: border-box;    
+}
+
+div {
+  /* border-style: solid; */
+  /* border-color: steelblue; */
+  /* border-width: 1px; */
+}
+
+.container {
+}
+
+#outer {
+  border-style: solid;
+  border-color: steelblue;
+  border-radius: 5px;
+  border-width: 2px;
+  padding: 5px;
+  height: 390px;
+  width: 740px;
+}
+
+
+#table-container {
+  float: left;
+  height: 100%;
+  width: 23%;
+}
+
+#chart-container {
+  float: left;
+  height: 100%;
+  width: 66%;
+}
+
+#right-panel-container {
+  float: left;
+  width: 11%;
+  height: 100%;
+  /* border-style: solid; */
+  /* border-color: red; */
+  /* border-width: 1px; */
+  font-family: sans-serif;
+  font-size: 10px;
+}
+
+#chart1 {
+  height: 50%;
+}
+
+#lower-row {
+  float: bottom;
+  width: 100%;
+  height: 50%;
+}
+
+.small-chart {
+  float: left;
+  height: 100%;
+}
+
+#chart2 {
+  width: 32%;
+}
+
+#chart3 {
+  width: 68%;
+}
+
+table {
+  overflow: auto;
+  max-height: 300px;
+}
+
+#input_table {
+  display: flex;
+  border-style: solid;
+  border-radius: 3px;
+  border-width: 1px;
+  border-color: grey;
+}
+
+#table-heading {
+  max-width: 30px;
+  display: inline;
+  font-size: 10px;
+}
+
+.barLabels {
+  font-size: 8px;
+}
+
+.fund_row {
+  width: 40px;
+  font-size: 10px;
+  display: inline;
+}
+
+button {
+  background-color: grey;
+  cursor: pointer;
+  border: none;
+  color: white;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  align: center;
+  border-radius: 3px;
+  margin: 3px;
+  width: 95%;
+  font-size: 10px;
+}
+
+.remove-btn {
+  font-size: 7px;
+  background-color: DarkRed;
+}
+
+.info-btn, #update-btn {
+  font-size: 7px;
+  background-color: green;
+}
+
+.table-heading {
+  font-family: Arial, sans-serif;
+  font-size: 10px;
+  width: 40px;
+  align: center;
+}
+
+td {
+  height: 25px;
+}
+
+.chart-title {
+  font-family: Arial, sans-serif;
+  font-size: 12;
+  fill: steelBlue;
+}
+
+.chart-title.data-source {
+  fill: black;
+}
+
+.xAxis {
+  font-size: 8px;
+}
+
+.yAxis {
+  font-size: 8px;
+}
+
+input {
+  font-family: sans-serif;
+  font-size: 10px;
+  font-color: DarkGrey;
+  align: center;
+}
+
+#radio-labels {
+  float: left;
+  align: right-top;
+  width: 70%;
+  height: 30px;
+}
+
+.rad {
+  padding: 10px;
+}
+
+#sum, #fee {
+  float: left;
+  font-family: sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  color: steelBlue;
+  padding-top: 10px;
+  padding-left: 10px;
+  width: 100%;
+}
+
+#spacer {
+  height: 40px;
+  width: 100%;
+}
+
+.label {
+  float: left;
+  width: 30%;
+}
+
+#sum-amt, #fee-amt {
+  text-align: right;
+}
+
+.tooltip {
+  font-family: sans-serif;
+  font-size: 10px;
+  font-weight: bold;
+  font-color: DarkGrey;
+}
+
+.zone-info {
+  height: 20;
+}
+</style></head>
 <body>
 <div class="container" id="outer">
 <div class="container" id="table-container">
