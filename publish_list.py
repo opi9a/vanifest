@@ -4,8 +4,14 @@ import subprocess
 from jinja2 import Environment, FileSystemLoader
 import getpass
 
+from mylogger import get_timelog
+
 USER = getpass.getuser()
 BASE_PATH = os.path.join('/home', USER, 'shared/projects/vanifest')
+
+log_path = os.path.join(BASE_PATH, 'logs', 'publish_list.log.txt')
+log = get_timelog(log_path)
+
 """
 Spec:
  - on click, grey out or something:
@@ -18,25 +24,34 @@ def push_to_git(file_to_push):
     May need to run this first before a session (or from bash)
     # subprocess.run(['git', 'config', 'credential.helper', 'store'])
     """
-    print('will try pushin', file_to_push)
+    init_dir = os.getcwd()
+    os.chdir(BASE_PATH)
     commit_msg = 'pushing ' + file_to_push
     subprocess.run(['git', 'add', file_to_push])
     subprocess.run(['git', 'commit', file_to_push, '-m', '"test"'])
     subprocess.run(['git', 'push', 'origin', 'master'])
 
+    os.chdir(init_dir)
 
-def make_html(in_path, template_path='template.html', out_path=None,
-             name=None):
+
+def make_html(in_path, template_file='template.html', out_path=None,
+             name=None, write_out=True):
     """Generates an html file ticklist.
 
     Input format should use "# " to denote headings, 
     with level dictated by number of # characters. 
     """
 
+    log.info('making html from ' + in_path)
+    log.info(' - out_path passed ' + str(out_path))
+
+    template_path = os.path.join(BASE_PATH, template_file)
+
     if out_path is None:
         out_filename = os.path.basename(in_path).split('.')[0] + '.html'
         out_path = os.path.join(BASE_PATH, out_filename)
         print('assigned outpath', out_path)
+        log.info('assigned out_path ' + out_path)
 
     if name is None:
         name = os.path.basename(in_path)
@@ -80,17 +95,21 @@ def make_html(in_path, template_path='template.html', out_path=None,
                     closures += 1
                 open_divs.append(level)
 
-            items.append({
+            item = {
                 'level': level,
                 'text': text,
                 'closures': closures,
                 'count': None,
-            })
+            }
 
-    get_counts(items)
+            log.info(" ".join(['level:', str(level).rjust(5), 'text:', text]))
+            items.append(item)
+
+    out = get_counts(items)
+
 
     pwd = os.getcwd()
-    env = Environment(loader=FileSystemLoader(pwd))
+    env = Environment(loader=FileSystemLoader('/'))
     
     with open(out_path, 'w') as f:
         f.write(env.get_template(template_path).render(
@@ -98,6 +117,15 @@ def make_html(in_path, template_path='template.html', out_path=None,
             open_divs = len(open_divs),
             name = name,
         ))
+
+    lev_counts = {}
+
+    for item in items:
+        lev_counts[item['level']] = lev_counts.setdefault(item['level'], 0) + 1
+
+    max_level = max([k for k in lev_counts.keys() if k is not None])
+
+    print(f'Listed {lev_counts[None]} items, max level of {max_level}')
 
     return out_path
 
@@ -120,9 +148,9 @@ def get_counts(table, i=None):
 
     curr_level = table[i]['level']
     curr_text = table[i]['text']
-    # print(f'\nLooking at row {i}, {curr_text}')
-    # print(f'-- current level is {curr_level}')
-    # print(f'-- current count is {table[i]["count"]}')
+    # log.info(f'\nLooking at row {i}, {curr_text}')
+    # log.info(f'-- current level is {curr_level}')
+    # log.info(f'-- current count is {table[i]["count"]}')
 
     # count direct elements and get list of subheaad
     # --> look forward until next heading at same or above level
@@ -138,32 +166,34 @@ def get_counts(table, i=None):
         # get all elements before a sublevel
 
         j += 1
-        # print('\n---- looking forward to row', j + i)
+        # log.info(" ".join(['looking forward to row', str(j), str(i)]))
 
         new_level = table[i + j]['level']
-        # print('---- level of forward row is', new_level)
+        # log.info(' '.join(['---- level of forward row is', str(new_level)]))
 
         if new_level is None:
             if at_current_level:
                 elements += 1
-                # print('---- incrementing elements to', elements)
+                # log.info(' '.join(['---- incrementing elements to',
+                #                    str(elements)]))
 
         elif new_level == curr_level + 1:
             sub_heads.append(i + j)
-            # print('---- appending to sub_heads, now ', sub_heads)
+            # log.info(' '.join(['---- appending to sub_heads, now',
+            #                    str(sub_heads)]))
             at_current_level = False
 
         elif new_level <= curr_level:
             # means found a higher level
-            # print('---- exiting loop')
+            # log.info(' '.join(['---- exiting loop']))
             break
 
-    # print(f'found {elements} elements, and sub heads {sub_heads} to look at')
+    # log.info(f'found {elements} elements, and sub heads {sub_heads} to look at')
     subh_sum = sum([get_counts(table, x) for x in sub_heads])
-    # print(f'after calling get_counts on sub_heads for {curr_text},'
-          # f' have a sum of {subh_sum}')
+    # log.info(f'after calling get_counts on sub_heads for {curr_text},'
+             # f' have a sum of {subh_sum}')
     out = elements + subh_sum
-    # print(f'total for {curr_text} is therefore', out)
+    # log.info(f'total for {curr_text} is therefore ' + str(out))
     table[i]['count'] = out
 
     return out
@@ -188,3 +218,7 @@ if __name__ == "__main__":
             print(out_path)
             out_filename = os.path.basename(out_path)
             push_to_git(out_filename)
+
+            url_base = 'https://opi9a.github.io/vanifest/'
+            url = url_base + out_filename
+            print(url)
