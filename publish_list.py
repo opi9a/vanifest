@@ -50,7 +50,6 @@ def make_html(in_path, template_file='template.html', out_path=None,
     if out_path is None:
         out_filename = os.path.basename(in_path).split('.')[0] + '.html'
         out_path = os.path.join(BASE_PATH, out_filename)
-        print('assigned outpath', out_path)
         log.info('assigned out_path ' + out_path)
 
     if name is None:
@@ -124,8 +123,9 @@ def make_html(in_path, template_file='template.html', out_path=None,
         lev_counts[item['level']] = lev_counts.setdefault(item['level'], 0) + 1
 
     max_level = max([k for k in lev_counts.keys() if k is not None])
+    no_levels = sum([lev_counts[x] for x in lev_counts if x is not None])
 
-    print(f'Listed {lev_counts[None]} items, max level of {max_level}')
+    print(f'Listed {lev_counts[None]} items in {no_levels} categories, max level of {max_level}')
 
     return out_path
 
@@ -215,10 +215,9 @@ if __name__ == "__main__":
 
         else:
             out_path = make_html(md_list_path)
-            print(out_path)
             out_filename = os.path.basename(out_path)
             push_to_git(out_filename)
 
             url_base = 'https://opi9a.github.io/vanifest/'
             url = url_base + out_filename
-            print(url)
+            print('url:', url)
