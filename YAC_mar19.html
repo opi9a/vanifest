@@ -1872,10 +1872,14 @@
 <script>
   $(document).ready(function(){
 
+  <!-- apply formatting to pre-ticked elements and complete categories -->
   $("div[data-ticked='YES']").attr("style", "color: LightGrey");
+  $(".counter:contains(3)").addClass("badge-success");
 
+  <!-- the main events on ticking -->
   $(".element").click(function(){
 
+    <!-- is the element currently ticked? -->
     var checked = $( this ).attr("data-ticked");
     var counters = $( this ).parents().prev().find('.counter');
 
