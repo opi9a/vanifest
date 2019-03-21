@@ -1921,8 +1921,13 @@
 
   <!-- apply formatting to pre-ticked elements and complete categories -->
   $("div[data-ticked='YES']").attr("style", "color: LightGrey");
-  $(".counter:contains(0)").removeClass("badge-secondary");
-  $(".counter:contains(0)").addClass("badge-success");
+
+	var complete = $(".counter").filter( function(x) {
+			return this.innerHTML == 0
+	});
+
+	complete.removeClass("badge-secondary");
+	complete.addClass("badge-success");
 
   <!-- the main events on ticking -->
   $(".element").click(function(){
