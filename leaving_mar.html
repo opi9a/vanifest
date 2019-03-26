@@ -36,8 +36,6 @@
  <div class="card heading rounded-0">
   <div class="card-body lev0 py-2">
     <h3> leaving mar
-      <span class='add-item badge badge-primary float-none'>
-        +</span>
       <span class='counter badge badge-secondary float-right'>
         48</span>
       <h3>
@@ -55,8 +53,6 @@
  <div class="card heading rounded-0">
   <div class="card-body lev1 py-2">
     <h4> general
-      <span class='add-item badge badge-primary float-none'>
-        +</span>
       <span class='counter badge badge-secondary float-right'>
         8</span>
       <h4>
@@ -188,8 +184,6 @@
  <div class="card heading rounded-0">
   <div class="card-body lev1 py-2">
     <h4> cycling
-      <span class='add-item badge badge-primary float-none'>
-        +</span>
       <span class='counter badge badge-secondary float-right'>
         14</span>
       <h4>
@@ -405,8 +399,6 @@
  <div class="card heading rounded-0">
   <div class="card-body lev1 py-2">
     <h4> PR extras
-      <span class='add-item badge badge-primary float-none'>
-        +</span>
       <span class='counter badge badge-secondary float-right'>
         3</span>
       <h4>
@@ -468,8 +460,6 @@
  <div class="card heading rounded-0">
   <div class="card-body lev1 py-2">
     <h4> clothes
-      <span class='add-item badge badge-primary float-none'>
-        +</span>
       <span class='counter badge badge-secondary float-right'>
         4</span>
       <h4>
@@ -545,8 +535,6 @@
  <div class="card heading rounded-0">
   <div class="card-body lev1 py-2">
     <h4> misc
-      <span class='add-item badge badge-primary float-none'>
-        +</span>
       <span class='counter badge badge-secondary float-right'>
         5</span>
       <h4>
@@ -636,8 +624,6 @@
  <div class="card heading rounded-0">
   <div class="card-body lev1 py-2">
     <h4> todo
-      <span class='add-item badge badge-primary float-none'>
-        +</span>
       <span class='counter badge badge-secondary float-right'>
         3</span>
       <h4>
@@ -699,8 +685,6 @@
  <div class="card heading rounded-0">
   <div class="card-body lev1 py-2">
     <h4> leaving house
-      <span class='add-item badge badge-primary float-none'>
-        +</span>
       <span class='counter badge badge-secondary float-right'>
         7</span>
       <h4>
@@ -818,8 +802,6 @@
  <div class="card heading rounded-0">
   <div class="card-body lev1 py-2">
     <h4> docs
-      <span class='add-item badge badge-primary float-none'>
-        +</span>
       <span class='counter badge badge-secondary float-right'>
         4</span>
       <h4>
@@ -950,75 +932,9 @@
   });
 
 
-  <!-- $(".heading").click(function(){ -->
-  <!-- $(this).next("div").slideToggle(); -->
-  <!-- }); -->
-
-  <!-- $(".add-item").click(function(){ -->
-
-  <!--   var this_cat = $( this ) -->
-  <!--   var to_copy = $(".card element", this_cat)[0]; -->
-  <!--   var the_copy = $(to_copy).clone(); -->
-  <!--   $(this).append(the_copy); -->
-    
-
-  <!-- }); -->
-
-  var node = document.getElementsByClassName[0];
-  var longpress = false;
-  var presstimer = null;
-  var longtarget = null;
-
-  var cancel = function(e) {
-      if (presstimer !== null) {
-          clearTimeout(presstimer);
-          presstimer = null;
-      }
-      
-      this.classList.remove("longpress");
-  };
-
-  var click = function(e) {
-      if (presstimer !== null) {
-          clearTimeout(presstimer);
-          presstimer = null;
-      }
-      
-      this.classList.remove("longpress");
-      
-      if (longpress) {
-          return false;
-      }
-      
-      alert("press");
-  };
-
-  var start = function(e) {
-      console.log(e);
-      
-      if (e.type === "click" && e.button !== 0) {
-          return;
-      }
-      
-      longpress = false;
-      
-      this.classList.add("longpress");
-      
-      presstimer = setTimeout(function() {
-          alert("long click");
-          longpress = true;
-      }, 1000);
-      
-      return false;
-  };
-
-  node.addEventListener("mousedown", start);
-  node.addEventListener("touchstart", start);
-  node.addEventListener("click", click);
-  node.addEventListener("mouseout", cancel);
-  node.addEventListener("touchend", cancel);
-  node.addEventListener("touchleave", cancel);
-  node.addEventListener("touchcancel", cancel);
+  $(".heading").click(function(){
+  $(this).next("div").slideToggle();
+  });
 
 });
 </script>
