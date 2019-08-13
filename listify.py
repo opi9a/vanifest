@@ -143,7 +143,6 @@ def make_html(in_path, template_path=None, out_path=None,
 
     out = get_counts(items)
 
-    pwd = os.getcwd()
     env = Environment(loader=FileSystemLoader('/'))
     
     with open(out_path, 'w') as f:
