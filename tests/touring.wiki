@@ -1,0 +1,102 @@
+
+# pannier1
+## cooking
+- [ ] trangia
+- [ ] lighter
+- [ ] meths (store outside)
+- [ ] utensil
+- [ ] wetwipes
+
+## food
+- [ ] oil
+- [ ] condiments
+- [ ] food
+
+## breakfast and drinks
+- [ ] coffee
+- [ ] tea
+- [ ] dried milk
+- [ ] cereal
+- [ ] bars
+- [ ] mug
+
+# pannier2
+## clothing
+- [ ] pillow case
+- [ ] underwear
+- [ ] shorts
+- [ ] pjs
+- [ ] cycling kit
+## wash kit
+- [ ] wetwipes
+- [ ] toothbrush
+- [ ] toothpaste
+- [ ] painkillers
+- [ ] otrivine
+- [ ] earplugs
+- [ ] eyemask
+## camping
+- [ ] tent
+- [ ] sleeping bag
+- [ ] picnic mat
+- [ ] tarp
+- [ ] emergency bag
+- [ ] camping chair (?)
+
+- [ ] first aid
+- [ ] books to read
+
+# frame bag
+- [ ] lock
+- [ ] inner tubes
+- [ ] multitool
+- [ ] lights
+- [ ] batteries
+- [ ] chargers
+- [ ] allen keys
+- [ ] chain tool
+- [ ] chain links
+- [ ] cable ties
+
+# cockpit
+## escape bag
+- [ ] notebook and pen
+- [ ] charging cable
+- [ ] usb plug
+- [ ] usb multi adaptor
+- [ ] toothpicks
+- [ ] trail mix
+- [ ] sun cream
+- [ ] hayfever
+- [ ] magnesium
+- [ ] poncho
+
+## clothing roll
+- [ ] jackets
+- [ ] leggings
+
+# externals
+## bike cleaning
+- [ ] wd40
+- [ ] toothbrush
+- [ ] microfibre cloth
+- [ ] wetwipes
+## toilet kit
+- [ ] shovel
+- [ ] wetwipes
+- [ ] loo roll
+## strappings
+- [ ] bungee
+- [ ] paracord etc
+- [ ] velcro
+
+## bottle cages
+- [ ] meths
+- [ ] piss bottle
+- [ ] water bottles
+
+# other
+- [ ] crocs
+
+
+
