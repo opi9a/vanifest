@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+
+<html>
+<meta charset="utf-8"/>
+<head>
+<script> var init_funds_obj =
+<!-- hard code funds here by adding lines as reqd -->
+<!-- (follow syntax) -->
+{"SPY5": 1, "AGBP": 1, "H50E": 1, "IGLN": 1, "XMMS": 1} 
+<!-- --------------- -->
+    ;
+    </script>
+
+<style>*') {
+  box-sizing: border-box;    
+}
+
+div {
+  /* border-style: solid; */
+  /* border-color: steelblue; */
+  /* border-width: 1px; */
+}
+
+.container {
+}
+
+#outer {
+  /* border-style: solid; */
+  /* border-color: steelblue; */
+  /* border-radius: 5px; */
+  /* border-width: 2px; */
+  padding: 5px;
+  height: 790px;
+  width: 740px;
+}
+
+
+#table-container {
+  float: left;
+  height: 400;
+  width: 23%;
+}
+
+#chart-container {
+  float: left;
+  height: 55%;
+  width: 66%;
+}
+
+#right-panel-container {
+  float: left;
+  width: 11%;
+  height: 300;
+  /* border-style: solid; */
+  /* border-color: red; */
+  /* border-width: 1px; */
+  font-family: sans-serif;
+  font-size: 10px;
+}
+
+#chart1 {
+  height: 50%;
+}
+
+#lower-row {
+  float: bottom;
+  width: 100%;
+  height: 50%;
+}
+
+.small-chart {
+  float: left;
+  height: 100%;
+}
+
+#chart2 {
+  width: 32%;
+}
+
+#chart3 {
+  width: 68%;
+}
+
+table {
+}
+
+#input_table {
+  display: flex;
+  overflow: auto;
+  max-height: 280px;
+  border-style: solid;
+  border-radius: 3px;
+  border-width: 1px;
+  border-color: grey;
+}
+
+#funds-table-container {
+  float: left;
+  height: 190px;
+  width: 740px;
+}
+
+#funds-table {
+  overflow: auto;
+  max-height: 180px;
+  display: inline-block;
+  table-layout: fixed;
+  width: 90%;
+  border-style: solid;
+  border-radius: 3px;
+  border-width: 1px;
+  border-color: grey;
+  font-size: 10px;
+  font-weight: normal;
+}
+
+#funds-table td {
+  width: 25px;
+}
+
+#table-heading {
+  max-width: 30px;
+  display: inline;
+}
+
+.barLabels {
+  font-size: 8px;
+}
+
+.fund_row {
+  width: 40px;
+  font-size: 10px;
+  display: inline;
+}
+
+.fundInTable {
+  font-family: Arial, sans-serif;
+  font-size: 10;
+  fill: steelBlue;
+}
+
+button {
+  background-color: grey;
+  cursor: pointer;
+  border: none;
+  color: white;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  align: center;
+  border-radius: 3px;
+  margin: 3px;
+  width: 95%;
+  font-size: 10px;
+}
+
+#newFundInputPanel {
+  width=95%;
+}
+
+#addRow-btn {
+  width: 45%;
+}
+
+#newFundName {
+  float: left;
+  width: 35%;
+}
+
+.remove-btn {
+  font-size: 7px;
+  background-color: DarkRed;
+}
+
+.info-btn, #update-btn {
+  font-size: 7px;
+  background-color: green;
+}
+
+.table-heading {
+  font-family: Arial, sans-serif;
+  font-size: 10px;
+  width: 40px;
+  align: center;
+}
+
+td {
+  height: 25px;
+}
+
+.chart-title {
+  font-family: Arial, sans-serif;
+  font-size: 12;
+  fill: steelBlue;
+}
+
+.chart-title.data-source {
+  fill: black;
+}
+
+.xAxis {
+  font-size: 8px;
+}
+
+.yAxis {
+  font-size: 8px;
+}
+
+input {
+  font-family: sans-serif;
+  font-size: 10px;
+  font-color: DarkGrey;
+  align: center;
+}
+
+#radio-labels {
+  float: left;
+  align: right-top;
+  width: 70%;
+  height: 30px;
+}
+
+.rad {
+  padding: 10px;
+}
+
+#sum, #fee {
+  float: left;
+  font-family: sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  color: steelBlue;
+  padding-top: 10px;
+  padding-left: 10px;
+  width: 100%;
+}
+
+#spacer {
+  height: 40px;
+  width: 100%;
+}
+
+.label {
+  float: left;
+  width: 30%;
+}
+
+#sum-amt, #fee-amt {
+  text-align: right;
+}
+
+.tooltip {
+  font-family: sans-serif;
+  font-size: 10px;
+  font-weight: bold;
+  color: steelBlue;
+}
+
+.fundTableTitle {
+  width: 6%;
+  float: left;
+}
+
+.fundSelector {
+  float:left;
+  height: 200;
+  font-family: sans-serif;
+  font-size: 10px;
+  font-weight: bold;
+  color: steelBlue;
+}
+
+.feeFilter {
+  float: left;
+  width: 6%;
+}
+
+.assetFilter {
+  float: left;
+  width: 70px;
+}
+
+.assetFilterTitle, .fundFilterTitle {
+  float: left;
+  width: 100%;
+}
+
+#filterAsset, #filterFee {
+  width: 40px;
+  float: left;
+  font-size: 10px;
+  text-align: center;
+  /* border: 0 !important; */  
+  /* -webkit-appearance: none; */  
+  /* -moz-appearance: none; */ 
+  background: steelBlue;
+  
+  color: #FFF;
+  border-radius: 5px;
+}
+
+.zoneSelector {
+  float: left;
+  /* width: 35%; */
+}
+
+#zoneTableTitle {
+  width: 50%;
+}
+
+#zoneColHeads {
+  /* width: 90%; */
+}
+
+.zoneColHead {
+  width: 14%;
+  float: left;
+}
+
+.zoneCol {
+  min-width: 60px;
+  /* float: left; */
+}
+
+.countrySelector {
+  float: left;
+  width: 20%;
+}
+
+.areaType-selector {
+  float: left;
+  width: 20%;
+}
+
+.viewFund, .addFund {
+  float: left;
+  text-align: center;
+  width: 28px;
+}
+
+.viewFund {
+  background-color: green;
+}
+
+.col1 {
+  max-width: 22px;
+  min-width: 22px;
+}
+
+.col2 {
+  min-width: 60px;
+}
+</style></head>
+<body>
+<div class="container" id="outer">
+<div class="container" id="table-container">
+<div id="newFundInputPanel">
+<button id="addRow-btn">add Fund:</button>
+<input id="newFundName" type="text"/>
+</div>
+<table id="input_table">
+<tbody>
+<tr>
+<th class="table-heading">Fund</th>
+<th class="table-heading">Amount</th>
+</tr>
+</tbody>
+</table>
+<button id="update-btn">chart whole portfolio</button>
+<div id="sum">
+<div class="label">sum:</div>
+</div>
+<div id="fee">
+<div class="label">fee:</div>
+</div>
+</div>
+<div class="container" id="chart-container">
+<div id="chart1"></div>
+<div class="container" id="lower-row">
+<div class="container small-chart" id="chart2"></div>
+<div class="container small-chart" id="chart3"></div>
+</div>
+</div>
+<div id="right-panel-container">
+<form>
+<input checked="" name="mode" type="radio" value="percent"/>percent<br/>
+<input name="mode" type="radio" value="actual"/>actual
+			</form>
+</div>
+<div class="fundSelector">
+<div class="fundTableTitle" style="width: 70px">Fund</div>
+<div class="feeFilter">
+<div class="fundTableTitle feeFilterTitle">fee&lt;</div>
+<input id="filterFee" step="0.1" type="number" value="0.5"/>
+</div>
+<div class="assetFilter">
+<div class="fundTableTitle assetFilterTitle">asset:</div>
+<!-- <input type="text" value="all" id="filterAsset"> -->
+<select id="filterAsset">
+<option>all</option>
+<option>stock</option>
+<option>bond</option>
+<option>gold</option>
+<option>sector</option>
+<option>commodity</option>
+<option>other</option>
+<option>unknown</option>
+</select>
+</div>
+<div class="zoneSelector">
+<div id="zoneTableTitle">sort by zone</div>
+<div id="zoneColHeads" style="width: 190px">
+<div class="zoneColHead">NN</div>
+<div class="zoneColHead">UK</div>
+<div class="zoneColHead">EU</div>
+<div class="zoneColHead">NA</div>
+<div class="zoneColHead">AS</div>
+<div class="zoneColHead">PE</div>
+<div class="zoneColHead">EM</div>
+</div>
+</div>
+<div class="countrySelector">
+<div class="countryTableTitle">sort by country</div>
+<input class="countrySelection" type="text" value=""/>
+</div>
+<div class="container" id="funds-table-container">
+<table id="funds-table">
+</table>
+</div>
+</div>
+<script src="resources/d3.min.js"></script>
+<script src="resources/funds.js"></script>
+<script src="resources/countriesToZones.js"></script>
+<script src="resources/zonesToCountries.js"></script>
+<script src="js/byAsset.js"></script>
+<script src="js/byZone.js"></script>
+<script src="js/byCountry.js"></script>
+<script src="pf.js"></script>
+</div></body>
+</html>
